@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>SE 3316 - Lab 2</title>
+        <link rel="stylesheet" href="lab2.css">
+        <meta charset="UTF-8">
+
+        <a href="#"> </a>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+                crossorigin="anonymous">
+</head>
+
+<body>
+        <script type='text/javascript' src="script.js">
+
+        </script>
+             <!----   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>﻿>---->
+        <header>
+                <div class="container">
+                        <header class="header">
+                                <h3 class="header-logo">Western Store<a href="#0"><img id="header-image" src="images/WESTERN1.png"></a></h3>
+                                <nav class="header-nav">
+                                        <ul>
+                                                <li><a href="#header-logo">Home</a></li>
+                                                <li><a href="#0">Products</a></li>
+                                                <li><a href="#0">Contact</a></li>
+                                                <li> <a href="ManagerLogin.html">Sign in <span> <img id="sign-in" src="images/sign-in.png ">
+                                                        </a></li>
+                                                <li><span>
+                                                                <a href="#payment"> Cart <img id="checkout-image" src="images/Checkout-Dollar.png">
+                                                </li></span></a>
+                                                <div class="header">
+                                </nav>
+                        </header>
+                        <hr>
+                        <div class="products">
+                                <!----shopping section-->
+
+                                <!-- products -->
+                                <section>
+                                        <ul class="product-list">
+                                                <h2> </h2>
+                                                <li>
+                                                        
+                                                        <a href="#product1">
+                                                                <img id="sony" src="images/sony.jpg"></li>
+                                                <span>
+                                                        <form method="POST">
+                                                        <input type = "submit"  id="example-checkbox1" type="checkbox" value='Sony Headphones'>
+                                                        Product:<label for="example-checkbox1" id="example"><b> Sony
+                                                                        Headphones</b></label>
+                                                        <br>
+                                                        <input id="productprice1" type="hidden" value="50">
+                                                        Price: <label id="productprice1"> $50</label>
+                                                        <br><input type = "hidden" value = "60" id ="available1">
+                                                        Available Quantity : <label for ="available1" id ="available" >60</label>
+                                                        <div id="value-buttons"></div>
+                                                        <div class="button-section">
+                                                                <form>
+                                                                        <fieldset>
+                                                                                <label for="product-quantity">Quantity</label>
+                                                                                <div class="value-button" id="decrease"
+                                                                                        onclick="decreaseValue('number1')"
+                                                                                        value="Decrease Value">-</div>
+                                                                                <input type="number" id="number1" value="1"
+                                                                                        placeholder="1" step="1" min="1"
+                                                                                        max="60" />
+                                                                                <div class="value-button" id="produc"
+                                                                                        onclick="increaseValue('number1')"
+                                                                                        value="Increase Value">+</div>
+                                                                        </fieldset>
+                                                                        <button class="button" onclick="addToBag(1)">Add
+                                                                                to Bag</button>
+                                                                        </fieldset>
+                                                                </form>
+                                                                <li>
+                                                                        <a href="#product2">
+                                                                                <img id="soundbot" src="images/soundbot.jpg">
+                                                                </li>
+                                                                <span>
+                                                                        <input id="example-checkbox2" type="checkbox"
+                                                                                value="Soundbot Headphones">
+                                                                        Product: <label for="example-checkbox2" id="random">
+                                                                                Soundbot Headphones </label>
+                                                                </span>
+                                                                <br> <input id="productprice2" type="hidden" value="47">
+                                                                Price:<strong>$47.75</strong>
+                                                                <br>
+                                                                <input type ="hidden" value = "26" id = "available">
+                                                                Available Quantity : <b> 26 </b>
+                                                                </a>
+                                                                <div class="button-section">
+                                                                        <form>
+                                                                                <fieldset>
+                                                                                        <label for="product-quantity">Quantity</label>
+                                                                                        <div class="value-button" id="decrease1"
+                                                                                                onclick="decreaseValue('number2')"
+                                                                                                value="Decrease Value">-</div>
+                                                                                        <input type="number" id="number2"
+                                                                                                value="1" placeholder="1"
+                                                                                                min="1" max="26" />
+                                                                                        <div class="value-button" id="increase1"
+                                                                                                onclick="increaseValue('number2')"
+                                                                                                value="Increase Value">+</div>
+                                                                                </fieldset>
+                                                                                <button class="button" onclick="addToBag(2)">Add
+                                                                                        to Bag</button>
+
+                                                                                </fieldset>
+                                                                        </form>
+                                                                        <li>
+                                                                                <a href="#product3">
+                                                                                        <img id="TechComm" src="images/TechComm.jpg">
+                                                                        </li>
+                                                                        <span class="product-name">
+                                                                                <input id="example-checkbox3" type="checkbox"
+                                                                                        value="TechComm Headphones">
+                                                                                Product:<label for="example-checkbox3"
+                                                                                        id="translate">
+                                                                                        TechComm Headphones</label>
+                                                                                <input id="productprice3" type="hidden"
+                                                                                        value="53">
+                                                                                <br> Price: <strong>
+                                                                                        $53.75</strong>
+                                                                                <br>
+                                                                                Available Quantity : <b> 10 </b>
+                                                                                </a>
+                                                                                <div class="button-section">
+                                                                                        <form>
+                                                                                                <fieldset>
+                                                                                                        <label for="product-quantity">Quantity</label>
+                                                                                                        <div class="value-button"
+                                                                                                                id="decrease2"
+                                                                                                                onclick="decreaseValue('number3')"
+                                                                                                                value="Decrease Value">-</div>
+                                                                                                        <input type="number"
+                                                                                                                value="1"
+                                                                                                                name="quantity"
+                                                                                                                id="number3"
+                                                                                                                min="1"
+                                                                                                                max="10" />
+                                                                                                        <div class="value-button"
+                                                                                                                id="increase2"
+                                                                                                                onclick="increaseValue('number3')"
+                                                                                                                value="Increase Value">+</div>
+                                                                                                </fieldset>
+                                                                                                <button class="button"
+                                                                                                        onclick="addToBag('3')">Add
+                                                                                                        to Bag</button>
+
+                                                                                                </fieldset>
+                                                                                        </form>
+                                                                                        <div class="products4"></div>
+
+                                </section>
+                                <section>
+                                        <ul class="product-list">
+                                                <li> <a href="#product4">
+                                                                <img id="bose" src="images/Bose.jpg"> </li>
+                                                <span>
+                                                        <input id="example-checkbox4" type="checkbox" value="Bose Headphones">
+                                                        Product:<label for="example-checkbox4" id="translate1">Bose
+                                                                Headphones
+                                                        </label>
+                                                </span>
+                                                <input id="productprice4" type="hidden" value="59">
+                                                <br> Price: <strong> $59</strong>
+                                                <br>
+                                                Available Quantity : <b> 36 </b>
+                                                </a>
+                                                <div class="button-section">
+                                                        <form>
+                                                                <fieldset>
+                                                                        <label for="product-quantity">Quantity</label>
+                                                                        <div class="value-button" id="decrease3"
+                                                                                onclick="decreaseValue('number4')"
+                                                                                value="Decrease Value">-</div>
+                                                                        <input type="number" id="number4" value="1" min="1"
+                                                                                max="36" />
+                                                                        <div class="value-button" id="increase3"
+                                                                                onclick="increaseValue('number4')"
+                                                                                value="Increase Value">+</div>
+                                                                </fieldset>
+                                                                <button class="button" onclick="addToBag('4')">Add to
+                                                                        Bag</button>
+                                                                </fieldset>
+                                                        </form>
+                                                        <li>
+                                                                <a href="#product5">
+                                                                        <img id="Gamezero" src="images/Game-zero.jpg">
+                                                        </li>
+                                                        <span>
+                                                                <input id="example-checkbox5" type="checkbox" value="Game-zero Headphones">
+                                                                Product: <label for="example-checkbox5" id="translate2">
+                                                                        Game-zero Headphones </label>
+                                                        </span>
+                                                        <input id="productprice5" type="hidden" value="45">
+                                                        <br> Price: <strong class="product-price"> $45</strong>
+                                                        <br>
+                                                        Available Quantity : <b> 10 </b>
+                                                        </a>
+                                                        <div class="button-section">
+                                                                <form>
+                                                                        <fieldset>
+                                                                                <label for="product-quantity">Quantity</label>
+                                                                                <div class="value-button" id="decrease4"
+                                                                                        onclick="decreaseValue('number5')"
+                                                                                        value="Decrease Value">-</div>
+                                                                                <input type="number" id="number5" value="1"
+                                                                                        min="1" max="10" />
+                                                                                <div class="value-button" id="increase4"
+                                                                                        onclick="increaseValue('number5')"
+                                                                                        value="Increase Value">+</div>
+                                                                        </fieldset>
+                                                                        <button class="button" onclick="addToBag(5)">Add
+                                                                                to Bag</button>
+                                                                </form>
+
+                                                                <li>
+                                                                        <a href="#product6">
+                                                                                <img id="Microsoft" src="images/Microsoft.jpg"></li>
+                                                                <span>
+                                                                        <input id="example-checkbox6" type="checkbox"
+                                                                                value="Microsoft Headphones">
+                                                                        Product: <label for="example-checkbox6" id="translate3">
+                                                                                Microsoft Headphones</label>
+                                                                </span>
+                                                                <input id="productprice6" type="hidden" value="60">
+                                                                <br> Price: <strong> $60</strong>
+                                                                <br>
+                                                                Available Quantity : <b> 30 </b>
+                                                                </a>
+                                                                <div class="button-section">
+                                                                        <form>
+                                                                                <fieldset>
+                                                                                        <label for="product-quantity">Quantity</label>
+                                                                                        <div class="value-button" id="decrease5"
+                                                                                                onclick="decreaseValue('number6')"
+                                                                                                value="Decrease Value">-</div>
+                                                                                        <input type="number" id="number6"
+                                                                                                value="1" min="1" max="30" />
+                                                                                        <div class="value-button" id="increase5"
+                                                                                                onclick="increaseValue('number6')"
+                                                                                                value="Increase Value">+</div>
+                                                                                </fieldset>
+                                                                                <button class="button" onclick="addToBag(6)">Add
+                                                                                        to Bag</button>
+                                                                        </form>
+                                                                        </fieldset>
+                                                                        <hr>
+                                </section>
+                                <section class="middle ">
+                                        <ul class="product-lit">
+                                                <li> <a href="#product7">
+                                                                <img id="bose" src="images/edifier.jpg"> </li>
+                                                <span>
+                                                        <input id="example-checkbox7" type="checkbox" value="Edifier Headphones">
+                                                        Product:<label for="example-checkbox7" id="translate4"> Edifier
+                                                                Headphones </label>
+                                                </span>
+                                                <input id="productprice7" type="hidden" value="70">
+                                                <br> Price: <strong class="product-price"> $70</strong>
+                                                <br>
+                                                Available Quantity : <b> 19 </b>
+                                                </a>
+                                                <div class="button-section">
+                                                        <form>
+                                                                <fieldset>
+                                                                        <label for="product-quantity">Quantity</label>
+                                                                        <div class="value-button" id="decrease6"
+                                                                                onclick="decreaseValue('number7')"
+                                                                                value="Decrease Value">-</div>
+                                                                        <input type="number" id="number7" value="1" max="19" />
+                                                                        <div class="value-button" id="increase6"
+                                                                                onclick="increaseValue('number7')"
+                                                                                value="Increase Value">+</div>
+                                                                </fieldset>
+                                                                <button class="button" onclick="addToBag(7)"> Add to
+                                                                        Bag</button>
+                                                                </fieldset>
+                                                        </form>
+
+                                                        <li><a href="#product8">
+                                                                        <img id="Gamezero" src="images/Steel-series.jpg"></li>
+                                                        <span class="product-name">
+                                                                <input id="example-checkbox8" type="checkbox" value="Steel Headphones">
+                                                                Product:<label for="example-checkbox8" id="translate5">
+                                                                        <b>Steel
+                                                                                Headphones </b></label>
+                                                        </span>
+                                                        <input id="productprice8" type="hidden" value="65">
+                                                        <br> Price: <strong class="product-price"> $65</strong>
+                                                        <br>
+                                                        Available Quantity : <b> 36 </b>
+                                                        </a>
+                                                        <div class="button-section">
+                                                                <form>
+                                                                        <fieldset>
+                                                                                <label for="product-quantity">Quantity</label>
+                                                                                <div class="value-button" id="decrease7"
+                                                                                        onclick="decreaseValue('number8')"
+                                                                                        value="Decrease Value">-</div>
+                                                                                <input type="number" class="add" id="number8"
+                                                                                        value="1" min="1" max="36" />
+                                                                                <div class="value-button" id="increase8"
+                                                                                        onclick="increaseValue('number8')"
+                                                                                        value="Increase Value">+</div>
+                                                                        </fieldset>
+                                                                        <button class="button" onclick="addToBag(8)">Add
+                                                                                to Bag</button>
+                                                                        </fieldset>
+                                                                </form>
+                                                                <li> <a href="#product9">
+                                                                                <img id="Gamezero" src="images/Micolindun.jpg">
+                                                                </li>
+                                                                <span>
+                                                                        <input id="example-checkbox9" type="checkbox"
+                                                                                value="Miccolindun Headphones">
+                                                                        Product:<label for="example-checkbox9" id="translate6">
+                                                                                <b>Micolindun Headphones </b></label>
+                                                                </span>
+                                                                <input id="productprice9" type="hidden" value="55">
+                                                                <br> Price: <strong> $55</strong>
+                                                                <br>
+                                                                Available Quantity : <b> 38 </b>
+                                                                </a>
+                                                                <div class="button-section">
+                                                                        <form>
+                                                                                <fieldset>
+                                                                                        <label for="product-quantity">Quantity</label>
+                                                                                        <div class="value-button" id="decrease8"
+                                                                                                onclick="decreaseValue('number9')"
+                                                                                                value="Decrease Value">-</div>
+                                                                                        <input type="number" id="number9"
+                                                                                                value="1" max="38" />
+                                                                                        <div class="value-button" id="increase8"
+                                                                                                onclick="increaseValue('number9')"
+                                                                                                value="Increase Value">+</div>
+
+
+                                                                                </fieldset>
+
+                                                                                <button class="button" onclick="addToBag(9)">Add
+                                                                                        to Bag</button>
+
+
+                                                                        </form>
+                                </section>
+                                <section id="payment">
+                                        <p>&nbsp;</p>
+                                        <p>&nbsp;</p>
+                                        <p>&nbsp;</p>
+                                        <p> Your shopping cart contains the following items..</p>
+
+                                        <div id="Cart"></div>
+                                        <button id="showcart" onclick="displayCart()"> Show Cart</button>
+                                        <button class="button" onclick="purchaseItem()"> Buy </button>
+                                        <div id = "myCart"></div>
+                                        <button id ="showitems" onclick="getProducts()"> Show items</button>
+
+
+                                        <div id="buythis"> </div>
+
+                                        <td width="10">&nbsp;</td>
+                        
+                                        </tr>
+                                        <div id  ="inventory"> </div>
+                                        <button id ="manageinventory" onclick ="showItems()" > inventory </button>
+
+</body>
+
+<p><a href="#">Home</a> | <a href="#">Browse</a> | <a href="#">Search</a></p>
+<p><em>Copyright &copy; Western Store</em></p>
+
+</body>
+
+</html>
+
+<ol id=”fruits”></ol>
