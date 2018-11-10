@@ -95,4 +95,22 @@ fetch('products/test')
 document.getElementById('inventory').innerHTML = now
 } 
 
+window.onload = getProducts 
+function save() { //function for first button 
+  var time = new Date();
+  var val = document.getElementById('product1').value;
+  //val = encodeHTML(val); // sanitizing user input
+  var pri = document.getElementById('price1').value;
+ // pri =encodeHTML(pri);
+  var qty = document.getElementById('Quantity1').value;
+ // qty = encodeHTML(qty);
+  
+    fetch('products/create', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({Item: val, price : pri , Quantity: qty, timeStamp:time.toString()})
+    })
+    .then(getProducts()); // load the new list
+
+  }
  //document.getElementById("inventory").innerHTML = inventory; } 
