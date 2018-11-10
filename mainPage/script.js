@@ -1,46 +1,49 @@
-// elements in an array
-//var express = require( 'express')
-var Item = []
-var products = []
-var Quantity = []
+
+let cart = []
+
+class Product {
+  constructor(name,price,quantity){
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+  }
+}
 
 function addToBag(id) {
   var name = document.getElementById("example-checkbox" + id).value
-  Item.push(name);
   var price = document.getElementById("productprice" + id).value
-  products.push(parseInt(price));
   var qty = document.getElementById("number" + id).value;
-  if ( qty <= 0){alert("Value has to be greater than 1") } 
-  else{Quantity.push(parseInt(qty))
-
-  };
-  console.log(Item);
-  console.log(products);
-  console.log(Quantity);
+  if ( qty <= 0) alert("Value has to be greater than 1") 
+  else{
+    let newProduct = new Product(name,price,qty);
+    cart.push(newProduct);
+    console.log('cart',cart);
+  }
   
 }
 //function to display cart
 function displayCart() {
  
-  cartdata = '<table><tr><th>Product Name </th><th> Quantity</th> <th> Price</th><th> Total + Tax(13%) </th></tr>';
-  total = 0;
-  for (i = 0; i < Quantity.length; i++) {
-    total += products[i] * Quantity[i] 
-    cartdata += "<tr><td>" + Item[i] + "</td><td>" + Quantity[i] + "</td><td>" + products[i] + "</td><td>" +
-      products[i] * Quantity[i] + "</td><td><button onclick ='delElement(" + i + " )'>Delete</button></td><tr> "
-  }
+  let cartdata = '<table><tr><th>Product Name </th><th> Quantity</th> <th> Price</th><th> Total + Tax(13%) </th></tr>';
+  let total = 0;
+
+  cart.forEach(product =>{
+    total += (product.price * product.quantity);
+    cartdata += "<tr><td>" + product.name + "</td><td>" + product.quantity + "</td><td>" + product.price + "</td><td>" +
+    product.price * product.quantity + "</td><td><button onclick ='delElement(" + cart.indexOf(product) + " )'>Delete</button></td><tr> "
+  })
+
   cartdata += '<tr><td></td><td></td><td></td> <td>' + total + '</td></tr></table>'
 
   document.getElementById('Cart').innerHTML = cartdata
 }
 function delElement(a) {
-  Item.splice(a, 1);
-  products.splice(a, 1)
-  Quantity.splice(a, 1)
+  cart.splice(a,1);
   displayCart();
 }
 //Purchase Item
-function purchaseItem(){ var text;
+function purchaseItem(){ 
+  var text;
   if (confirm("Are you sure you want to proceed")) {
       text = "Thanks for Shopping with Us";
   } else {
@@ -90,6 +93,6 @@ fetch('products/test')
   console.log(error);
 })
 document.getElementById('inventory').innerHTML = now
-} ;
+} 
 
  //document.getElementById("inventory").innerHTML = inventory; } 

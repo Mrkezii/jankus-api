@@ -11,7 +11,10 @@ var express = require('express');
 var product = require('./routes/product.route'); // Imports routes for the products 
 var app = express();
 app.use(express.static('mainPage'))
-console.log( "getting the file")
+
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname + '/mainPage/lab2.html')
+})
      // call express
                  // define our app using express
 var bodyParser = require('body-parser');
