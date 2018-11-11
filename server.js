@@ -13,15 +13,15 @@ var product = require("./routes/product.route"); // Imports routes for the produ
 var app = express();
 app.use(express.static("mainPage"));
 
-// app.set("views", path.join(__dirname, "mainPage"));
-// app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "mainPage"));
+app.set("view engine", "hbs");
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/mainPage/lab2.html");
-});
 // app.get("/", (req, res) => {
-//   res.render("index", { title: " Shopping API" });
+//   res.sendFile(__dirname + "/mainPage/lab2.html");
 // });
+app.get("/", (req, res) => {
+  res.render("index", { title: " Shopping API" });
+});
 
 // call express
 // define our app using express

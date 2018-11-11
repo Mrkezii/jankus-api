@@ -1,0 +1,31 @@
+<h1>Products</h1>
+<h2 id="header1">Products</h2>
+<ul id="product1"></ul>
+<form action="products/create" method="POST">
+  Item: <input type="text" name="Item" id="product1" placeholder="" maxlength="200" />
+  <br>
+  price <input type="number" name="price" id="price1" />
+  <br>
+  Quantity <input type="number" name="Quantity" id="Quantity1" />
+  <br>
+  <button onclick="save()"> save </button>
+
+</form>
+<section>
+
+  <p> Click here to view </p>
+  <button id="h" onclick="getProd()"> button </button>
+  <div id="view">
+
+  </div>
+</section>
+
+<p>Click "Send" button to update the list of records in the database.</p>
+<p>
+  <a href="#">Home</a> | <a href="#">Browse</a> | <a href="#">Search</a>
+</p>
+<p>
+  <em>Copyright &copy; Western Store</em>
+</p>
+
+<script type='text/javascript' src="script.js"></script>
