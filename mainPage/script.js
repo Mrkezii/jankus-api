@@ -1,8 +1,7 @@
-
-let cart = []
+let cart = [];
 
 class Product {
-  constructor(name,price,quantity){
+  constructor(name, price, quantity) {
     this.name = name;
     this.price = price;
     this.quantity = quantity;
@@ -10,107 +9,78 @@ class Product {
 }
 
 function addToBag(id) {
-  var name = document.getElementById("example-checkbox" + id).value
-  var price = document.getElementById("productprice" + id).value
+  var name = document.getElementById("example-checkbox" + id).value;
+  var price = document.getElementById("productprice" + id).value;
   var qty = document.getElementById("number" + id).value;
-  if ( qty <= 0) alert("Value has to be greater than 1") 
-  else{
-    let newProduct = new Product(name,price,qty);
+  if (qty <= 0) alert("Value has to be greater than 1");
+  else {
+    let newProduct = new Product(name, price, qty);
     cart.push(newProduct);
-    console.log('cart',cart);
+    console.log("cart", cart);
   }
-  
-}
-//function to display cart
-function displayCart() {
- 
-  let cartdata = '<table><tr><th>Product Name </th><th> Quantity</th> <th> Price</th><th> Total + Tax(13%) </th></tr>';
-  let total = 0;
-
-  cart.forEach(product =>{
-    total += (product.price * product.quantity);
-    cartdata += "<tr><td>" + product.name + "</td><td>" + product.quantity + "</td><td>" + product.price + "</td><td>" +
-    product.price * product.quantity + "</td><td><button onclick ='delElement(" + cart.indexOf(product) + " )'>Delete</button></td><tr> "
-  })
-
-  cartdata += '<tr><td></td><td></td><td></td> <td>' + total + '</td></tr></table>'
-
-  document.getElementById('Cart').innerHTML = cartdata
-}
-function delElement(a) {
-  cart.splice(a,1);
-  displayCart();
-}
-//Purchase Item
-function purchaseItem(){ 
-  var text;
-  if (confirm("Are you sure you want to proceed")) {
-      text = "Thanks for Shopping with Us";
-  } else {
-      text = "Check for More items !";
-  }
-  document.getElementById("buythis").innerHTML = text;
 }
 
-// Increment Function
-function increaseValue(productId) {
-  let value = parseInt(document.getElementById(productId).value, 10);
-  value = isNaN(value) ? 0 : value;
-  value++;
-  value > 1;
-  document.getElementById(productId).value = value;
-}
-
-// decrement function
-function decreaseValue(productId) {
-  var value = parseInt(document.getElementById(productId).value, 10);
-  value = isNaN(value) ? 1 : value;
-  value < 1 ? value = 0 : '';
-  value--;
-  document.getElementById(productId).value = value;
-}
-function getProducts(){ var now;
-   const ul = document.getElementById('buythis');
-const url = 'products/test'
-//removeChild(ul); // remove list elements if there are any
-fetch('products/test')
-.then(function(resp) {
-  console.log(resp);
-  return resp.json();
-  })
-.then(function(data) {
-  console.log(data);
-  return data.map(function(Product) {
-    let li = createNode('li'),
-      span = createNode('span');
-    span.innerHTML = Product.message + Product.timeStamp;
-    span.setAttribute("title", `ID: ${Product._id}`)
-    append(li, span);
-    append(ul, li);
-  })
-})
-.catch(function(error) {
-  console.log(error);
-})
-document.getElementById('inventory').innerHTML = now
-} 
-
-window.onload = getProducts 
-function save() { //function for first button 
-  var time = new Date();
-  var val = document.getElementById('product1').value;
-  //val = encodeHTML(val); // sanitizing user input
-  var pri = document.getElementById('price1').value;
- // pri =encodeHTML(pri);
-  var qty = document.getElementById('Quantity1').value;
- // qty = encodeHTML(qty);
-  
-    fetch('products/create', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({Item: val, price : pri , Quantity: qty, timeStamp:time.toString()})
+function getProd() {
+  //const ul = document.getElementById("buythis");
+  // const url = 'products/create'
+  //removeChild(ul); // remove list elements if there are any
+  const section = document.getElementById("view");
+  fetch("products/test")
+    .then(function(resp) {
+      // console.log("response", resp);
+      return resp.json();
     })
-    .then(getProducts()); // load the new list
+    .then(function(products) {
+      console.log("response", products);
+      const list = document.createElement("form");
+      // const table = doum
+      products.map(function(product) {
+        console.log(product.Item);
+        const container = document.createElement("div");
+        const titleInput = document.createElement("input");
+        const priceInput = document.createElement("input");
+        const quantityInput = document.createElement("input");
 
-  }
- //document.getElementById("inventory").innerHTML = inventory; } 
+        titleInput.type = "text";
+        titleInput.value = product.Item;
+
+        priceInput.type = "number";
+        priceInput.labels = "Price";
+        priceInput.value = product.price;
+
+        quantityInput.type = "number";
+        quantityInput.value = product.Quantity;
+
+        // item.style.display = "block";
+
+        // item.appendChild(
+        //   document.createTextNode(`${product.Item} - ${product.price}`)
+        // );
+        container.append(titleInput, priceInput, quantityInput);
+        list.appendChild(container);
+      });
+      section.append(list);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+}
+
+// window.onload = getProducts;
+
+const save = () => {
+  //function for first button
+  var time = new Date();
+  var val = document.getElementById("product1").value;
+  //val = encodeHTML(val); // sanitizing user input
+  var pri = document.getElementById("price1").value;
+  // pri =encodeHTML(pri);
+  var qty = document.getElementById("Quantity1").value;
+  // qty = encodeHTML(qty);
+
+  fetch("products/create", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ Item: val, price: pri, Quantity: qty })
+  }).then(getProducts()); // load the new list
+};
