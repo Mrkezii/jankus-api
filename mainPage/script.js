@@ -36,6 +36,7 @@ function getProd() {
        // cart.push(product.price);
         quantityInput.type = "number";
         quantityInput.value = product.Quantity;
+     
        // cart.push(product.Quantity);
         
         // item.style.display = "block";
@@ -76,10 +77,10 @@ function  myTable(){
   cartdata = '<table><tr><th>Item /th><th>   Quantity      </th> <th>    Price    </th><th> Tax(13%) </th></tr>';
   total = 0;
   for (i = 0; i < cart.length; i++) {
-    cartdata += "<tr><td>" + cart.values[i] + "</td><td>" + price.value[i] + "</td><td>" + Quantity.value[i] + "</td><td>" +
+    cartdata += "<tr><td>" + cart.values[i] + "</td><td>" + price.value[i] + "</td><td>" +  quantityInput1[i] + "</td><td>" +
        "</td><td><button onclick ='delElement(" + i + " )'>Delete</button></td><tr> "
   }
   cartdata += '<tr><td></td><td></td><td></td> <td>' + total + '</td></tr></table>'
   document.getElementById('Cart').innerHTML = cartdata
 }
-window.onload = myTable
+//window.onload = myTable
