@@ -1,32 +1,36 @@
 <h1>Products</h1>
 <h2 id="header1">Products</h2>
 <ul id="product1"></ul>
-<form action="products/create" method="POST">
-  Item: <input type="text" name="Item" id="product1" placeholder="" maxlength="200" />
+<div>
+  Item: <input type="text" name="Item" id="product2" placeholder="" maxlength="200" />
   <br>
   price <input type="number" name="price" id="price1" />
   <br>
   Quantity <input type="number" name="Quantity" id="Quantity1" />
   <br>
   <button onclick="save()"> save </button>
-
-</form>
+</div>
 <section>
 
   <p> Click here to view </p>
-  <table style="width: 60%" , th =" solidblack">
+  {{!-- <table style="width: 60%" , th=" solidblack">
     <tr>
       <th>Item </th>
       <th> Quantity </th>
       <th> Price </th>
     </tr>
-  </table>
+  </table> --}}
   <div id="view"></div>
 
-  <button id="h" onclick="getProd()"> button </button>
+  <button id="h" onclick="getProd()"> Get All Items </button>
 
   </div>
 </section>
+
+<form id="form-id">
+
+</form>
+
 
 <p>Click "Send" button to update the list of records in the database.</p>
 <p>
