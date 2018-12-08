@@ -10,9 +10,9 @@ exports.test = function(req, res) {
 
 exports.product_create = function(req, res, next) {
   let product = new Product({
-    Item: req.body.Item,
+    item: req.body.item,
     price: req.body.price,
-    Quantity: req.body.Quantity
+    quantity: req.body.quantity
   });
   product.save(function(err) {
     if (err) {
@@ -28,13 +28,19 @@ exports.product_details = function(req, res, next) {
   });
 };
 exports.product_update = function(req, res, next) {
-  Product.findByIdAndUpdate(req.params.id, { $set: req.body }, function(
-    err,
-    product
-  ) {
-    if (err) return next(err);
-    res.send("Product udpated.");
-  });
+  //res.send('Welcome to our api')
+  const content = {
+    item: req.body.item,
+    price: req.body.price,
+    quantity: req.body.quantity,
+    tax: req.body.tax
+  };
+  Product.findByIdAndUpdate(req.params.id, content)
+    .then(x => {
+      console.log(x);
+      return res.send(x);
+    })
+    .catch(err => res.send({ err }));
 };
 exports.product_delete = function(req, res, next) {
   Product.findByIdAndDelete(req.params.id, { $set: req.body }, function(

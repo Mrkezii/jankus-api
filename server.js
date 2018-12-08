@@ -8,6 +8,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 var express = require("express");
 var path = require("path");
+const cors = require("cors");
 
 var product = require("./routes/product.route"); // Imports routes for the products
 var app = express();
@@ -26,13 +27,15 @@ app.get("/", (req, res) => {
 // call express
 // define our app using express
 var bodyParser = require("body-parser");
-var port = process.env.port || 8080;
+// var port = process.env.port || 8080;
+var port = 7070;
 app.listen(port, () => {
   console.log("Server is up and running on port number " + port);
 });
-
+app.use(cors());
 app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/products", product);
